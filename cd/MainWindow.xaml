@@ -1,0 +1,42 @@
+﻿<Window x:Class="cd.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:cd"
+        mc:Ignorable="d"
+        Title="Список услуг" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="1621798382_26-phonoteka_org-p-zubchataya-peredacha-fon-27.jpg"/>
+        </Grid.Background>
+        <DataGrid x:Name="Service" HorizontalAlignment="Left" Height="335" Margin="10,10,0,0" VerticalAlignment="Top" Width="774">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Title" Binding="{ Binding Title}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Cost" Binding="{ Binding Cost}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="DurationInTime" Binding="{ Binding DurationInTime}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Description" Binding="{ Binding Description}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Discount" Binding="{ Binding Discount}" ></DataGridTextColumn>
+                <!--<DataGridTextColumn Header="MainImagePath" Binding="{ Binding MainImagePath }" >
+                </DataGridTextColumn>-->
+                <DataGridTemplateColumn Header=" MainImagePath ">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Width="150" Height="auto" Stretch="Uniform" Source ="{Binding ServicePhoto.PhotoPath}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="bt1" Click="bt1_Click" Content="Редактировать" ></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="dob" Content="Добавить" HorizontalAlignment="Left" Margin="129,376,0,0" VerticalAlignment="Top" Width="169" Click="dob_Click" Background="White"/>
+        <Button x:Name="vih" Content="Выход" HorizontalAlignment="Left" Margin="537,376,0,0" VerticalAlignment="Top" Width="169" Click="vih_Click" Background="White"/>
+        
+    </Grid>
+</Window>
